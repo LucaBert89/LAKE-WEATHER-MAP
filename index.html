@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+    <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+    <title>Document</title>
+
+  
+    <script src="https://js.api.here.com/v3/3.1/mapsjs-core.js"
+    type="text/javascript" charset="utf-8"></script>
+    <script src="https://js.api.here.com/v3/3.1/mapsjs-core-legacy.js"
+          type="text/javascript" charset="utf-8"></script>
+  <script src="https://js.api.here.com/v3/3.1/mapsjs-service.js"
+    type="text/javascript" charset="utf-8"></script>
+    <script src="https://js.api.here.com/v3/3.1/mapsjs-service-legacy.js"
+          type="text/javascript" charset="utf-8"></script>
+          <script type="text/javascript" src="https://js.api.here.com/v3/3.1/mapsjs-ui.js"></script>
+          <script src="https://js.api.here.com/v3/3.1/mapsjs-mapevents.js"
+   type="text/javascript" charset="utf-8"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header id="weatherTitle">
+        <div id="title" class="p-3">
+            <h1 class="text-center m-0">LAKE WEATHER MAP</h1>
+        </div>
+    </header>
+    <section id="main-site">
+        <div id="image-site" class="p-5">
+            <div id="searchingSection">
+                <div id="instructionTitle">
+                    <h2>INSERT THE LOCATION TO GET THE CURRENT WEATHER DATA!</h2>
+                    <h5>GO THEN TO THE MAP AND DISCOVER THE LAKES!</h5>
+                </div>
+                <div class="container inputLocation">
+                    <form action="javascript:void(0);" class="container pl-5 pr-0">
+                        <input type="text" id="searchCity" autocomplete="off" value ="" placeholder="insert the lake location.." required>
+                        <input id="addcityBtn" class="button" type="submit" value="Find">
+                    </form>
+                    <span id="errorMessage" class="d-block"></span>
+                </div>  
+            </div>
+            <div id="weatherForecast" class="pb-5">
+                <div class="container">
+                    <label for="city" class="d-block p-3">Location:
+                        <span id="cityToday" class="city" name="city">-</span>
+                    </label>
+                    <label for="currentWeather" class="p-3">Current Weather:
+                        <span id="forecast" name="currentWeather"></span>
+                    </label>
+                    
+                    <img id="weatherIcon" src="" alt="" srcset="">
+
+                    <label for="temperature" class="d-block p-3">Temperature:
+                        <span class="temperature" id="temp" name="temperature">-</span>
+                    </label>
+                    <label for="min" class="d-block p-3"> Min Temperature:
+                        <span class="temperature" id="min" name="min">-</span>
+                    </label>
+                    <label for="max" class="d-block p-3">Max Temperature:
+                        <span class="temperature" id="max" name="max">-</span>
+                    </label>    
+                </div>
+            </div>
+        </div>
+        <div id="weatherLakes">
+            <div id="suggestionTitle">
+                <h2>You don't know where are the lakes?</h2>
+                <span>We can suggest you up to 20 lakes around the selected location, you can check the weather forecast of the next 3 days by clicking on the marker!</span>
+                <div id="suggestBtn" class="button d-inline-block">
+                    Search
+                </div>
+                
+            </div>
+            <div class="container">
+                <div id="mapid" class="p-5"></div>
+            </div>
+            <div class="container pb-5" id="locationsWeather">
+                <div class="location d-block">
+                    <label for="lake" class="locationName d-block">Lake Location:
+                        <span class="lake d-block" id="lakeForecast" name="lake"></span>
+                    </label>
+                </div>
+                <div id="nextdayWeather p-0">
+                    <div id="firstDay" class="d-inline-block nextDays">
+                        <label for="forecast" class="d-block days">
+                            <span class="forecast d-block" name="forecast" class="d-block">-</span>
+                        </label>    
+                        <img class="weatherIcon" src="" alt="" srcset="">
+                        <span class="tempForecast d-block">-</span>
+                    </div>
+                    <div id="secondDay" class="d-inline-block nextDays m-0">
+                        <label for="forecast" class="d-block days">
+                            <span class="forecast d-block" name="forecast" class="d-block">-</span>
+                        </label>    
+                        <img class="weatherIcon" src="" alt="" srcset="">
+                        <span class="tempForecast d-block">-</span>
+                    </div>
+                    <div id="thirdDay" class="d-inline-block nextDays">
+                        <label for="forecast" class="d-block days">
+                            <span class="forecast d-block" name="forecast">-</span>
+                        </label>    
+                        <img class="weatherIcon" src="" alt="" srcset="">
+                        <span class="tempForecast d-block">-</span>
+                    </div>
+            </div>
+        </div>
+            
+        </div>
+    </section>
+    <footer>
+        <p>© Copyright 2020. All Rights are Reserved.</p>
+      </footer>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  
+    <script  src="./dist/main.js"></script>
+    <script type="module" src="./src/index.js"></script>
+    <script type = "module" src="script.js"></script>
+</body>
+</html>

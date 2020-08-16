@@ -1,0 +1,233 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Oswald', sans-serif;
+}
+
+
+#image-site{
+    background-image:url("../images/giammarco-boscaro-UkOpMcslmX8-unsplash\ \(1\).jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    width:100%;
+    height:100%;
+    margin:0;
+    padding:0;
+}
+
+/*header section */
+#weatherTitle {
+    position:relative;
+    background-color: #4F6644;
+    color: #fff;
+}
+
+/* main site */
+#main-site {
+    text-align: center;
+}
+
+#instructionTitle{
+    text-align: left;
+    width:100%;
+    margin-top:-20px;
+    margin-bottom:30px;
+    color:#4F6644;
+}
+
+#instructionTitle h2 {
+    font-size:24px;
+    font-weight:500;
+}
+
+#instructionTitle h5 {
+    font-size:14px;
+    font-weight: 400;
+}
+
+/*searching location */
+
+#searchingSection {
+    position:relative;
+}
+
+#searchingSection .inputLocation {
+    width:100%;
+}
+
+#searchCity {
+    width:85%;
+    padding:10px;
+    border-radius: 20px;
+}
+
+input[type=text] {
+    background-color: #1E202B;
+    color: #fff;
+    display: inline-block;
+}
+
+.button {
+    background-color: #54B6C3;
+    border-radius:20px;
+    padding:10px 30px;
+    color:#fff;
+    border:1px solid #fff;
+}
+
+.button:hover {
+    cursor:pointer;
+    background-color: #fff;
+    color: #54B6C3;
+}
+
+
+/*weather forecast for the location */
+#weatherForecast {
+    width: 100%;
+    position:relative;
+    display: block;
+    margin: 20px;
+    text-align: center;
+}
+
+#weatherForecast div {
+    color:#fff;
+    background-color: rgba(152,152,156,0.4);
+    width: 100%;
+    padding: 30px 0;
+    font-size: 1rem;
+    border-radius:20px;
+}
+
+#weatherIcon {
+    width:70px;
+    display: block;
+    margin:auto;
+}
+
+
+@media all and (min-width: 780px) {
+    #instructionTitle{
+        margin-top:0;
+        margin-bottom:50px;
+    }
+
+    #instructionTitle h2 {
+        font-size:34px;
+    }
+    
+    #instructionTitle h5 {
+        font-size:20px;
+    }
+
+    #weatherForecast div {
+        font-size: 2rem;
+        width:55%;
+    }
+
+    #searchingSection .inputLocation{
+        width:55%;
+    }
+
+    #searchCity {
+        padding:20px;
+    }
+
+    #weatherIcon {
+        width:100px;
+    }
+  }
+
+
+/*map section */
+#weatherLakes{
+    padding: 50px 0;
+    background-color: #4F6644;
+    position:relative;
+    color: #fff;
+}
+
+#errorMessage {
+    color: #000;
+}
+
+.temperature {
+    display:inline-block;
+}
+
+#mapid { 
+    height: 600px;
+    width: 100%; 
+}
+
+#suggestionTitle h2 {
+    font-size:20px;
+    font-weight: 700;
+}
+
+#suggestionTitle span {
+    font-size:16px;
+    font-weight: 300;
+    display:block;
+}
+
+@media all and (min-width: 780px) {
+    #suggestionTitle h2 {
+        font-size:24px;
+    }
+
+    #suggestionTitle span {
+        font-size:20px;
+        font-weight: 300;
+        display:block;
+    }
+  }
+
+/*forecast Lakes */
+#locationsWeather {
+    background-color:rgba(152,152,156,0.2);
+    border-radius: 20px;
+    width: 50%;
+}
+
+.nextDays {
+    background-color:#54B6C3;
+    border: 2px solid #000;
+    padding: 20px;
+    width: 100%;
+}
+
+.locationName{
+    margin-bottom:20px;
+}
+
+.nextDays:last-child {
+    margin-right: 0px;
+}
+
+footer {
+    height: auto;
+    width: 100%;
+    background-color: #041230;
+    color: #fff;
+    padding: 20px 20px;
+}
+
+@media all and (min-width: 780px) {
+    .nextDays {
+        background-color:#54B6C3;
+        margin-top: 20px;
+        border: 2px solid #000;
+        padding: 20px;
+        width: 32%;
+    }
+    
+    footer {
+        height: auto;
+        width: 100%;
+        background-color: #041230;
+        color: #fff;
+        padding: 50px 20px;
+    }
+
+  }
