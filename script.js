@@ -176,15 +176,16 @@ function addMarkersToMap(map) {
         let iconWeather = document.querySelectorAll(".weatherIcon");
         let temp = document.querySelectorAll(".tempForecast");
         let icon; 
-        let day = document.querySelectorAll(".days");
-        var ts = new Date();
+        let dayWeather = document.querySelectorAll(".days");
+        
         
            function dayForecast(daytag, day) {
-                console.log(ts.toLocaleDateString(body.daily[day].dt));
-                
+                var days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+                var d = new Date(body.daily[day].dt * 1000);
+                var dayName = days[d.getDay()];
+                dayWeather[daytag].innerHTML = dayName;
                 icon = body.daily[day].weather[0].icon;
                 forecast[daytag].innerHTML = body.daily[day].weather[0].description;
-                console.log(forecast[daytag].innerHTML); 
                 iconWeather[daytag].setAttribute("src", "http://openweathermap.org/img/w/" + icon + ".png" );
                 temp[daytag].innerHTML = body.daily[day].temp.day + "°C";
             }
