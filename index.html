@@ -31,20 +31,18 @@
     <section id="main-site">
         <div id="image-site" class="p-5">
             <div id="searchingSection">
-                <div id="instructionTitle">
-                    <h2>INSERT THE LOCATION TO GET THE CURRENT WEATHER DATA!</h2>
-                    <h5>GO THEN TO THE MAP AND DISCOVER THE LAKES!</h5>
-                </div>
                 <div class="container inputLocation">
-                    <form action="javascript:void(0);" class="container pl-5 pr-0">
+                    <form action="javascript:void(0);" class="container">
                         <input type="text" id="searchCity" autocomplete="off" value ="" placeholder="insert the lake location.." required>
                         <input id="addcityBtn" class="button" type="submit" value="Find">
                     </form>
                     <span id="errorMessage" class="d-block"></span>
                 </div>  
             </div>
+            <div class="container">
             <div id="weatherForecast" class="pb-5">
-                <div class="container">
+                
+                    <h3>CURRENT WEATHER DATA</h3>
                     <label for="city" class="d-block p-3">Location:
                         <span id="cityToday" class="city" name="city">-</span>
                     </label>

@@ -58,11 +58,12 @@
     width:85%;
     padding:10px;
     border-radius: 20px;
+    border:none;
 }
 
 input[type=text] {
-    background-color: #1E202B;
-    color: #fff;
+    background-color: rgba(152,152,156,0.4);
+    color: #000;
     display: inline-block;
 }
 
@@ -70,6 +71,7 @@ input[type=text] {
     background-color: #54B6C3;
     border-radius:20px;
     padding:10px 30px;
+    margin-top:10px;
     color:#fff;
     border:1px solid #fff;
 }
@@ -86,11 +88,8 @@ input[type=text] {
     width: 100%;
     position:relative;
     display: block;
-    margin: 20px;
+    margin-top: 20px;
     text-align: center;
-}
-
-#weatherForecast div {
     color:#fff;
     background-color: rgba(152,152,156,0.4);
     width: 100%;
@@ -98,6 +97,7 @@ input[type=text] {
     font-size: 1rem;
     border-radius:20px;
 }
+
 
 #weatherIcon {
     width:70px;
