@@ -70,8 +70,8 @@ var defaultLayers = platform.createDefaultLayers();
 /*API calls for city temperature and weather */
 function cityWeather() {
     let city = searchCity.value;
-    let apiKey = api2;
-    let url = `http://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}&lang=US`;
+    let apiKey = process.env.API_KEY2;
+    let url = `http://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${process.env.API_KEY2}&lang=US`;
     
     fetch(url)  
         .then(res => {
@@ -113,9 +113,9 @@ function cityWeather() {
         map.setZoom(10);
 
         limits = 20;
-        let apiKey = api1;
+        let apiKey = process.env.API_KEY;
 
-        let url= `https://browse.search.hereapi.com/v1/browse?at=${cityLatitude},${cityLongitude}&limit=${limits}&categories=350-3500-0304&apikey=${apiKey}`
+        let url= `https://browse.search.hereapi.com/v1/browse?at=${cityLatitude},${cityLongitude}&limit=${limits}&categories=350-3500-0304&apikey=${process.env.API_KEY}`
         
         fetch(url)  
             .then(res => {
@@ -164,14 +164,14 @@ function addMarkersToMap(map) {
 
 /*pass longitude and latitude to weather API */
     function apiWeather(lat, lon) {
-          let apiKey = api2;
-          let url =  `http://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&units=metric&appid=${apiKey}&lang=US`;
+          let apiKey = process.env.API_KEY2;
+          let url =  `http://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&units=metric&appid=${process.env.API_KEY2}&lang=US`;
           fetch(url)  
           .then(res => {
           return res.json();
       })
       .then(body => {
-          console.log(body);
+
         let forecast = document.querySelectorAll(".forecast");
         let iconWeather = document.querySelectorAll(".weatherIcon");
         let temp = document.querySelectorAll(".tempForecast");
@@ -196,8 +196,8 @@ function addMarkersToMap(map) {
         )}
 
     function apiName(lat, lon) {
-        let apiKey = api1;
-        let url = `https://browse.search.hereapi.com/v1/browse?at=${lat},${lon}&limit=${limits}&categories=350-3500-0304&apikey=${apiKey}`;
+        let apiKey = process.env.API_KEY;
+        let url = `https://browse.search.hereapi.com/v1/browse?at=${lat},${lon}&limit=${limits}&categories=350-3500-0304&apikey=${process.env.API_KEY}`;
         fetch(url)  
             .then(res => {
             return res.json();
