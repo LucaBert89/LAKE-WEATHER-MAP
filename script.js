@@ -71,7 +71,7 @@ var defaultLayers = platform.createDefaultLayers();
 function cityWeather() {
     let city = searchCity.value;
     let apiKey = process.env.API_KEY2;
-    let url = `http://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${process.env.API_KEY2}&lang=US`;
+    let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${process.env.API_KEY2}&lang=US`;
     
     fetch(url)  
         .then(res => {
@@ -97,7 +97,7 @@ function cityWeather() {
     })}
 
     function displayWeather () {
-        iconWeather.setAttribute("src", "http://openweathermap.org/img/w/" + icon + ".png" ); 
+        iconWeather.setAttribute("src", "https://openweathermap.org/img/w/" + icon + ".png" ); 
         cityName.innerHTML = nameC  ;
         temperature.innerHTML = `${temp} °C`;
         minTemperature.innerHTML = `${tempMin} °C`;
@@ -165,7 +165,7 @@ function addMarkersToMap(map) {
 /*pass longitude and latitude to weather API */
     function apiWeather(lat, lon) {
           let apiKey = process.env.API_KEY2;
-          let url =  `http://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&units=metric&appid=${process.env.API_KEY2}&lang=US`;
+          let url =  `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&units=metric&appid=${process.env.API_KEY2}&lang=US`;
           fetch(url)  
           .then(res => {
           return res.json();
