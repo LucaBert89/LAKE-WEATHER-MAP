@@ -44,7 +44,7 @@ let arraylakesLong = [];
 /* BUILD THE MAP */
 
 var platform = new H.service.Platform({
-    'apikey': api1
+    'apikey': process.env.API_KEY
   });
 
 var defaultLayers = platform.createDefaultLayers();
