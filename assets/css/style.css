@@ -160,8 +160,10 @@ input[type=text] {
     color: #fff;
 }
 
-#errorMessage {
-    color: #000;
+.errorMessage {
+    color: #fff;
+    background-color: red;
+    width:100%;
 }
 
 .temperature {
