@@ -43,12 +43,27 @@ let arraylakesLong = [];
                 displayWeather();
             })
         })
-    
+    AOS.init();
     closeBtn.addEventListener("click", closeForecast)
     cityBtn.addEventListener("click", cityWeather);
     suggestBtn.addEventListener("click", suggestLocation);
 })();
 
+
+
+
+    AOS.init({
+     
+      disable: false, 
+      startEvent: 'DOMContentLoaded', 
+      initClassName: 'aos-init', 
+      animatedClassName: 'aos-animate', 
+      useClassNames: false, 
+      disableMutationObserver: false, 
+      debounceDelay: 50, 
+      throttleDelay: 99, 
+    
+    });
 
 /* BUILD THE MAP */
 
@@ -118,7 +133,7 @@ var defaultLayers = platform.createDefaultLayers();
 
         limits = 20;
 
-        let url= `https://browse.search.hereapi.com/v1/browse?at=${cityLatitude},${cityLongitude}&limit=${limits}&categories=350-3500-0304&apikey=${process.env.API_KEY}`
+        let url= `https://browse.search.hereapi.com/v1/browse?at=${cityLatitude},${cityLongitude}&limit=${limits}&categories=350-3500-0304&apikey=${process.env.API_KEY}`;
         
         fetch(url)  
             .then(res => {
@@ -236,3 +251,5 @@ var defaultLayers = platform.createDefaultLayers();
     function closeForecast (){
         locations.classList.remove("active");
     }
+
+    
