@@ -11,5 +11,8 @@ Languages used:
 
 - **JAVASCRIPT VANILLA**
 
+Bundler:
+**webpack**
+
 Deploy link:
 https://lakeweathermap.netlify.app/
